@@ -1,0 +1,18 @@
+Full Calendar + Rails 3 + Simple Form. 
+
+Forked from https://github.com/bokmann/rails3_fullcalendar. 
+
+Diff:
+
+1. + AJAX for new event creation: Create, Retrieve, Update  (minus Delete) 
+
+2. + Twitter Bootstrap theme from the purchased wrap bootstrap 
+
+3. + Simple Form (platformatec) 
+
+
+More info? Question? or potential project? Contact me w.yunnal@gmail.com 
+
+
+To do:
+1. Assign different color scheme for different event. Right now, it is all black text on yellow background (burning my eyes!!). Future plan: providing 10 color schemes, will be assigned depending on the event's ID.  

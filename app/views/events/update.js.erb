@@ -1,0 +1,45 @@
+$(document).ready(function(){
+	// remove the spin
+	
+	var $modal = $("#editEntry");
+	var $form = $("form", $modal );
+	$form.spin(false); 
+	
+	// if update is successful
+		// remove the form 
+		// hide the modal 
+		// update the row entry 
+	// else
+		// replace the form with the faulty one 
+		// show all the error 
+	
+	
+		<% if   @has_no_errors  %> 
+			// clean the add product form
+			$form.remove(); 
+
+		 
+
+			$.msgbox("Berhasil update Event: <%= @object.title %>", 
+						{type: "info"});
+
+			
+			$modal.modal('hide'); 
+
+
+		<% elsif  not @has_no_errors %> 
+			<% new_form = escape_javascript(   render :partial => "events/new_object_form", :locals => {
+		    :new_object => @object , 
+				:url => event_url(@object)  
+		  })%>
+			//replace the form, show the edit
+			$form.replaceWith("<%= new_form %>"); 
+
+			$.msgbox("Error dalam update event: <%= @object.title %>", 
+						{type: "error"});
+		<% end %>
+
+
+		$('#calendar').fullCalendar( 'refetchEvents' );
+		jQuery('.prevent_double_submit').preventDoubleSubmit(); 
+});

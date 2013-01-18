@@ -1,0 +1,51 @@
+<% if new_object.persisted? %>
+	<% id = 'edit_object'%>
+	<% rest_method_class = 'rest_put' %>
+<% else %>
+	<% id = 'new_object'%>
+	<% rest_method_class = 'rest_post' %>
+<% end %>
+
+<%= simple_form_for( new_object, :url => url,
+      :method => :post , 
+      :html => {:class => "form-horizontal prevent_double_submit ajax-form #{rest_method_class}  no_content_form",
+        :id => "#{id}"}) do |f| %>
+
+	 
+
+
+  <%= f.input :title  , :input_html => {:class => "input-xlarge "}, 
+  :label => "Title" %>
+ 
+<hr />
+	<%= f.input :starts_at  , 
+				:input_html => {:class => "input-xlarge ", 
+												:value => "#{print_date_input(new_object.starts_at)}"}, 
+  											:label => "Starting Date", :as => :string,
+  											:hint => "Date Format: <b>dd/mm/yyyy</b>" %>
+
+	<%= f.input :ends_at  , 
+				:input_html => {:class => "input-xlarge ", 
+												:value => "#{print_date_input(new_object.ends_at)}"}, 
+  											:label => "Ending Date", :as => :string,
+  											:hint => "Date Format: <b>dd/mm/yyyy</b>"  %>
+
+	<%= f.input :all_day  , :input_html => {:class => "input-xlarge "}, 
+  :label => "All Day" %>
+
+<hr />
+	<%= f.input :description  , :input_html => {:class => "input-xlarge " , :rows => 5}, 
+  :label => "Description" %>
+ 
+ 
+
+  <div class="form-actions">
+	
+		<% if new_object.persisted? %>
+			<%= f.button :submit , :class => "btn btn-primary", :value=> "Update Event" %>
+		<% else %>
+			<%= f.button :submit , :class => "btn btn-primary", :value=> "Create Event" %>
+		<% end %>
+		
+  </div>
+<% end %>
