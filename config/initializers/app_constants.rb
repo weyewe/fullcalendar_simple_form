@@ -171,4 +171,56 @@ STOCK_ADJUSTMENT_CASE = {
   :addition => 2
 }
 
+EVENT_SOURCE_COLOR = {
+  1  => {
+    :color     => '#90ca77',    
+    :textColor => '#ffffff'
+  },
+  
+  2 => {
+    :color     => '#E48743',
+    :textColor => '#ffffff' 
+  },
+  
+  3 => {
+    :color     => '#7EB5D6',
+    :textColor => '#ffffff'
+  },
+  
+  4 => {
+    :color     => '#9E3B33',
+    :textColor => '#ffffff'
+  },
+  
+  5 => {
+    :color     => '#8F6048',
+    :textColor => '#ffffff'
+  },
+  
+  6 => {
+    :color     => '#E198B2',
+    :textColor => '#ffffff'
+  },
+  
+  7 => {
+    :color     => '#62587C',
+    :textColor => '#ffffff'
+  },
+  
+  8 => {
+    :color     => '#E198B2',
+    :textColor => '#ffffff'
+  },
+  
+  9 => {
+    :color     => '#C15D63',
+    :textColor => '#ffffff'
+  },
+  
+  10 => {
+    :color     => '#028482',
+    :textColor => '#ffffff'
+  }
+}
+
 

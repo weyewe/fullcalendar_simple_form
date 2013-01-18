@@ -24,7 +24,11 @@ class Event < ActiveRecord::Base
       :end => ends_at.rfc822,
       :allDay => self.all_day,
       :recurring => false,
-      :url => Rails.application.routes.url_helpers.edit_event_path(id)
+      :url => Rails.application.routes.url_helpers.edit_event_path(id),
+      :color => EVENT_SOURCE_COLOR[ self.id.to_s[-1].to_i  ][:color] , 
+      :textColor =>  EVENT_SOURCE_COLOR[ self.id.to_s[-1].to_i  ][:textColor] 
+      
+      
     }
     
   end
